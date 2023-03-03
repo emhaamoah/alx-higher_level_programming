@@ -1,11 +1,3 @@
 #!/usr/bin/python3
-i = 122
-while i >= 97:
-    flag = 0
-    if i % 2 != 0:
-        i = i - 32
-        flag = 1
-    print("{:s}".format(chr(i)), end="")
-    if flag == 1:
-        i = i + 32
-    i = i - 1
+for c in range(ord('z'), ord('a') - 1, -1):
+    print("{:c}".format((c - (ord('a') - ord('A'))) if c % 2 else c), end='')

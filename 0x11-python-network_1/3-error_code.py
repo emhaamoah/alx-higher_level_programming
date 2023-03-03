@@ -1,15 +1,14 @@
 #!/usr/bin/python3
-""" 
-Script that takes in a URL, send a request to URL, and dispaly body
-"""
+"""takes url & email, sends a POST request and displays the response"""
+from urllib.request import Request, urlopen
+from urllib.error import HTTPError
+from sys import argv
 
-
-if __name__ == "__main__":
-    import sys
-    from urllib import request, error
-
+if __name__ == '__main__':
+    req = Request(argv[1])
     try:
-        with request.urlopen(sys.argv[1]) as resp:
-            print(resp.read().decode('UTF-8'))
-    except error.HTTPError as er:
-        print('Error code:', er.code)
+        with urlopen(req) as response:
+            r = response.read()
+            print(r.decode('utf-8'))
+    except HTTPError as e:
+        print('Error code:', e.code)

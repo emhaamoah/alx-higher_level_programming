@@ -1,1 +1,1 @@
-This repository contains more data structures
+Data Structures
