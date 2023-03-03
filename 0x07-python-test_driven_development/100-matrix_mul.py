@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# 100-matrix_mul.py
+# Brennan D Baraban <375@holbertonschool.com>
 """Defines a matrix multiplication function."""
 
 
@@ -40,7 +42,7 @@ def matrix_mul(m_a, m_b):
         raise TypeError("m_b should contain only integers or floats")
 
     if not all(len(row) == len(m_a[0]) for row in m_a):
-        raise TypeError("each row of m_a must should be of the same size")
+        raise TypeError("each row of m_b must be of the same size")
     if not all(len(row) == len(m_b[0]) for row in m_b):
         raise TypeError("each row of m_b must be of the same size")
 
